@@ -5,7 +5,6 @@
 @tailwind utilities;
 
 @layer components {
-    /* Utilities */
     h1, .h1{
         @apply text-4xl md:text-5xl lg2:text-6xl font-extrabold uppercase tracking-wider xl:tracking-widest;
     }
@@ -19,21 +18,23 @@
     }
 
     h4, .h4{
-        @apply text-xl md:text-2xl font-semibold;
+        @apply text-xl md:text-2xl font-bold;
     }
 
     h5, .h5{
-        @apply text-lg md:text-xl font-medium;
+        @apply text-lg md:text-xl font-bold;
     }
 
     .container{
-        @apply max-w-screen-xl m-auto px-6 py-8 md:px-8 md:py-12 lg:px-12 lg:pt-24 lg:pb-8;
+        @apply max-w-screen-xl m-auto px-4 py-6 2xs:px-6 2xs:py-8 md:px-8 md:py-12 lg:px-12 lg:py-16;
     }
 
     .container-wave{
-        @apply relative;
-        top: -60px;
-        height: 60px;
+        @apply relative -top-15 h-15;
+    }
+
+    .container-h1{
+        @apply block xs2:inline-block mb-3;
     }
 
     .container-h2{
@@ -60,17 +61,64 @@
         @apply text-white;
     }
 
+    .container-exp .exp-list{
+        @apply bg-gray-600 p-4 2xs:p-6 sm:p-8 lg:p-10 rounded-xl xs:rounded-3xl;
+    }
+
+    .container-exp .exp-list .exp-sect{
+        @apply flex;
+    }
+
+    .container-exp-img{
+        @apply mr-4 2xs:mr-6 sm:mr-0 w-1/4 xs:w-1/5 md:w-1/6;
+    }
+
+    .container-exp-img > a > div{
+        @apply bg-white rounded-xl sm:rounded-2xl;
+    }
+
+    .container-exp-img > a > div > img{
+        @apply p-3/20;
+    }
+
+    .container-exp-content{
+        @apply w-full sm:w-4/5 w-4/5 md:w-5/6 ml-0 sm:ml-8 lg:ml-10;
+    }
+
+    .container-exp-content > .exp-heading{
+        @apply mb-8;
+    }
+
+    .container-exp-content .exp-heading .exp-title{
+        @apply block md2:flex md2:justify-between md2:items-center;
+    }
+
+    .container-exp .exp-list ul{
+        @apply list-disc ml-4 text-justify;
+    }
+
+    .container-exp-content > .exp-timeline{
+        @apply py-6;
+    }
+
+    .container-exp-content > .exp-timeline:last-child{
+        @apply pb-0;
+    }
+
+    .container-skills > div{
+        @apply mt-8;
+    }
+
+    .container-skills > div:first-child{
+        @apply mt-0;
+    }
+
     .btn{
         @apply border-2 rounded-2xl w-max px-6 py-2 cursor-pointer duration-500;
     }
 
     .btn-primary{
-        @apply bg-gray-800 border-gray-800 text-white;
-    }
-    
-    .btn-primary:hover{
-        background-color: rgb(6, 16, 29);
-        border-color: rgb(6, 16, 29);
+        @apply bg-gray-800 border-gray-800 text-white transform transition duration-500 hover:scale-110 hover:bg-gray-1000 hover:border-gray-1000;
     }
 
     .section-light{
@@ -89,8 +137,61 @@
         @apply bg-white border-white;
     }
 
+    .hover-translate{
+        @apply transform hover:-translate-y-1 duration-500 cursor-pointer;
+    }
+
+    .hover-translate-2{
+        @apply transform hover:-translate-y-2 duration-500 cursor-pointer;
+    }
+
     nav ul > li > a:hover{
         @apply text-white;
+    }
+
+    #hamburger{
+        @apply  block w-8 relative transform rotate-0 h-5;
+    }
+
+    #hamburger > span{
+        @apply block absolute opacity-100 left-0 transform rotate-0 duration-500 ease-in-out;
+        -webkit-transform-origin: left center;
+        -moz-transform-origin: left center;
+        -o-transform-origin: left center;
+        transform-origin: left center;
+
+        width: 100%;
+        height: 2.5px;
+        border-radius: 4px;
+        background: white;
+    }
+
+    #hamburger > span:nth-child(1){
+        top: 0px;
+    }
+
+    #hamburger > span:nth-child(2){
+        top: 9px;
+    }
+
+    #hamburger > span:nth-child(3){
+        top: 18px;
+    }
+
+    #hamburger.expand{
+        margin-left: 20%;
+    }
+
+    #hamburger.expand > span:nth-child(1){
+        @apply transform rotate-45;
+    }
+
+    #hamburger.expand > span:nth-child(2){
+        @apply w-0 opacity-0;
+    }
+
+    #hamburger.expand > span:nth-child(3){
+        @apply transform -rotate-45;
     }
 
     .desktop-nav > ul > li{
@@ -105,6 +206,14 @@
         @apply px-5 pb-3;
     }
 
+    .list-skills{
+        @apply mt-2;
+    }
+
+    .list-skills > li{
+        @apply hover-translate inline-block px-6 py-1 bg-gray-600 text-white mr-1 md:mr-2 my-2 rounded-3xl duration-500 cursor-pointer;
+    }
+
     #Home{
         height: 660px;
     }
@@ -115,16 +224,40 @@
         }
 
         .container-wave{
-            @apply static;
-            top: 0;
+            @apply static top-0;
         }
     }
 }
 
 *{
+    margin: 0;
+    padding: 0;
     font-size: 16px;
+}
+
+@media (max-width: 360px){
+    *{
+        font-size: 14px;
+    }
 }
 
 html{
     scroll-behavior: smooth;
+}
+
+@keyframes blink {
+    50% {
+      opacity: 0.0;
+    }
+}
+
+@-webkit-keyframes blink {
+    50% {
+    opacity: 0.0;
+    }
+}
+
+.animate-blink {
+    animation: blink 2s step-start 0s infinite;
+    -webkit-animation: blink 2s step-start 0s infinite;
 }

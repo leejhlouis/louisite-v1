@@ -6,12 +6,15 @@
     <link href="styles.css" rel="stylesheet">
     <title>LOUISITE.</title>
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
     <!-- Navbar -->
-    <nav id="Navbar" class="section-dark shadow-lg fixed z-10 duration-500">
+    <nav id="Navbar" class="section-dark shadow-lg fixed z-50 duration-500">
         <div class="container py-6 flex justify-between items-center">
             <!-- Icon -->
             <a href="#">
@@ -39,12 +42,11 @@
             <!-- Dropdown -->
             <div class="block lg:hidden flex items-center">
                 <button id="btn-mobile" type="button" class="inline-flex items-center justify-center rounded-md text-white hover:text-gray-300" aria-controls="mobile-menu" aria-expanded="false">
-                    <svg id="icon-expand" class="block w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg id="icon-collapse" class="hidden w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+                    <div id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </button>
             </div>
         </div>
@@ -65,17 +67,23 @@
 
     <section id="Home" class="section-light pt-20">
         <div class="container sm:pb-20 h-full sm:flex sm:items-center">
-            <img class="sm:hidden w-1/2 xs:w-1/3 mx-auto my-6" src="assets/banner-img.svg">
+            <img class="sm:hidden w-1/2 xs:w-1/3 mx-auto mt-4 my-6 hover-translate-2" src="assets/banner-img.svg">
             <div class="py-6 sm:py-0 sm:w-2/3 pr-6">
                 <p class="h3 mb-3">Hello, this is</p>
-                <h1 class="h1 mb-3">LOUIS GUSTAVO.</h1>
-                <p class="text-lg mb-3">A computer science undergraduate, a software developer wannabe, a front-end web developer, an UI/UX enthusiast.</p>
+                <h1 class="container-h1">
+                    <span class="h1">
+                        <span class="h1" id="first-name"></span>
+                        <span class="h1" id="last-name"></span>
+                    </span>
+                    <span id="vertical-bar" class="relative -top-1.5 md:-top-2 pl-2 text-2xl md:text-3xl lg2:text-4xl border-r-2 md:border-r-4 border-black"></span>
+                </h1>
+                <p class="text-lg mb-6">A computer science undergraduate, a software developer wannabe, a front-end web developer, an UI/UX enthusiast.</p>
                 <div class="btn btn-primary"><a href="#About">Learn more</a></div>
             </div>
-            <img class="hidden sm:block w-1/3 pl-0 md:pl-6 lg:pl-12" src="assets/banner-img.svg">
+            <img class="z-10 animate-pulse hidden sm:block w-1/3 pl-0 md:pl-6 lg:pl-12 hover-translate-2" src="assets/banner-img.svg">
         </div>
         <div class="container-wave bg-gray-800">
-            <svg class="bg-gray-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" fill="none">
+            <svg class="bg-gray-300 animate-bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" fill="none">
                 <rect xmlns="http://www.w3.org/2000/svg" class="w-full h-full bg-gray-300" fill="D1D5DB "/>
                 <path d="M833.079 29.3927C416.978 -36.7409 0 29.3927 0 29.3927V60H1440V29.3927V0.151872C1440 0.151872 1249.18 95.5263 833.079 29.3927Z" fill="#1F2937"/>
             </svg>
@@ -89,7 +97,7 @@
                 <hr>
             </div>
             <div class="md:flex md:items-start">
-                <img class="w-1/2 mx-auto mb-12 md:mb-0 md:w-1/4 lg:w-1/5 rounded-xl" src="assets/profile.png">
+                <img class="w-1/2 mx-auto mb-12 md:mb-0 md:w-1/4 lg:w-1/5 rounded-xl hover-translate" src="assets/profile.png">
                 <div class="w-full md:w-3/4 lg:w:4/5 md:ml-8 lg:ml-14 text-justify">
                     <h3 class="h4 mb-8">Nice to meet you, this is Louis—the person you are mostly looking for.</h3>
                     <p class="mb-6">I am a computer science undergraduate at BINUS University and a professional software developer wannabe. As an undergraduate, I mainly focus on learning the required subjects for my career path both from the university and online courses to increase my skills further, notably in programming and problem-solving.
@@ -98,8 +106,9 @@
                     </p>
                     <div class="container-social">
                         <a href="mailto:louisgustavo07@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/itslouisgs/" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/louis-gustavo/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.github.com/louisgtavo21/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.github.com/itslouisgs/" target="_blank"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
             </div>
@@ -113,103 +122,125 @@
                 <hr>
             </div>
             <!-- not stacked -->
-            <div class="container-exp">
-                <div class="bg-gray-600 flex p-8 rounded-3xl">
-                    <div class="container-exp-img w-1/5">
-                        <a href="">
-                            <div class="bg-white rounded-2xl">
-                                <img style="padding: 15%" src="assets/HIMTI.png" alt="HIMTI BINUS University">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-4/5 ml-12">
-                        <div class="exp-heading mb-8">
-                            <div class="flex justify-between items-center">
-                                <h3 class="h4">Web Developer</h3>
-                                <p>March 2021 – Present</p>
-                            </div>
-                            <h4 class="h5">HIMTI BINUS University</h4>
-                            <p>Jakarta, Indonesia</p>
+            <!-- <div class="container-exp">
+                <div class="exp-list hover-translate-2">
+                    <div class="exp-sect">
+                        <div class="hidden sm:block container-exp-img">
+                            <a href="https://ofog.himti.or.id/">
+                                <div class="hover:opacity-80 duration-500">
+                                    <img src="assets/HIMTI.png" alt="HIMTI BINUS University">
+                                </div>
+                            </a>
                         </div>
-                        <div class="exp-content">
-                            <ul class="list-disc ml-4">
-                                <li>Tech stack: HTML, CSS, JavaScript, Bootstrap 4, Tailwind CSS</li>
-                                <li>Develop the official websites for two HIMTI events, i.e., HISHOT (HIMTI Seminar, Workshop, and Study Tour) 2021 and TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) 2021.</li>
-                                <li>Develop the About Us page of HIMTI's renewed official website.</li>
-                                <li>Maintain and improve the UI/UX of the websites.</li>
-                            </ul>
+                        <div class="container-exp-content">
+                            <div class="exp-heading flex sm:block">
+                                <div class="sm:hidden container-exp-img">
+                                    <a href="">
+                                        <div>
+                                            <img src="assets/HIMTI.png" alt="HIMTI BINUS University">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div>
+                                    <div class="exp-title">
+                                        <h3 class="h4 text-lg sm:text-xl md:text-2xl">Web Developer</h3>
+                                        <p>March 2021 – Present</p>
+                                    </div>
+                                    <h4 class="h5 text-base xs:text-lg">HIMTI BINUS University</h4>
+                                    <p>Jakarta, Indonesia</p>
+                                </div>
+                            </div>
+                            <div class="exp-desc-wrapper">
+                                <div class="exp-desc">
+                                    <ul>
+                                        <li>Tech stack: HTML, CSS, JavaScript, Bootstrap 4, Tailwind CSS</li>
+                                        <li>Develop the official websites for two HIMTI events, i.e., HISHOT (HIMTI Seminar, Workshop, and Study Tour) 2021 and TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) 2021.</li>
+                                        <li>Develop the About Us page of HIMTI's renewed official website.</li>
+                                        <li>Maintain and improve the UI/UX of the websites.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="sm:hidden exp-desc-mobile-wrapper"></div>
                 </div>
-            </div>
+            </div> -->
 
-            <hr class="my-6">
             <!-- stacked -->
             <div class="container-exp">
-                <div class="bg-gray-600 flex p-8 rounded-3xl">
-                    <div class="container-exp-img w-1/5">
-                        <a href="">
-                            <div class="bg-white rounded-2xl">
-                                <img style="padding: 15%" src="assets/HIMTI.png" alt="HIMTI BINUS University">
-                            </div>
-                        </a>
-                    </div>
-                    <div class="w-4/5 ml-12">
-                        <div class="exp-main-heading">
-                            <h3 class="h4">HIMTI BINUS University</h3>
-                        </div>
-
-                        <div class="exp-list py-6">
-                            <div class="exp-heading mb-4">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="h5">Member, Web Development Division</h4>
-                                    <p>March 2021 – Present</p>
+                <div class="exp-list hover-translate-2">
+                    <div class="exp-sect">
+                        <div class="hidden sm:block container-exp-img">
+                            <a href="https://ofog.himti.or.id/">
+                                <div class="hover:opacity-80 duration-500">
+                                    <img src="assets/HIMTI.png" alt="HIMTI BINUS University">
                                 </div>
-                                <p>Jakarta, Indonesia</p>
-                            </div>
-                            <div class="exp-content">
-                                <ul class="list-disc ml-4">
-                                    <li>Tech stack: HTML, CSS, JavaScript, Bootstrap 4, Tailwind CSS</li>
-                                    <li>Develop the official websites for two HIMTI events, i.e., HISHOT (HIMTI Seminar, Workshop, and Study Tour) 2021 and TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) 2021.</li>
-                                    <li>Develop the About Us page of HIMTI's renewed official website.</li>
-                                    <li>Maintain and improve the UI/UX of the websites.</li>
-                                </ul>
-                            </div>
+                            </a>
                         </div>
-
-                        <div class="exp-list py-6">
-                            <div class="exp-heading mb-4">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="h5">Member, Web Development Division</h4>
-                                    <p>March 2021 – Present</p>
+                        <div class="container-exp-content">
+                            <div class="flex sm:block items-center">
+                                <div class="sm:hidden container-exp-img">
+                                    <a href="https://ofog.himti.or.id/">
+                                        <div class="hover:opacity-80 duration-500">
+                                            <img src="assets/HIMTI.png" alt="HIMTI BINUS University">
+                                        </div>
+                                    </a>
                                 </div>
-                                <p>Jakarta, Indonesia</p>
-                            </div>
-                            <div class="exp-content">
-                                <ul class="list-disc ml-4">
-                                    <li>Tech stack: HTML, CSS, JavaScript, Bootstrap 4, Tailwind CSS</li>
-                                    <li>Develop the official websites for two HIMTI events, i.e., HISHOT (HIMTI Seminar, Workshop, and Study Tour) 2021 and TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) 2021.</li>
-                                    <li>Develop the About Us page of HIMTI's renewed official website.</li>
-                                    <li>Maintain and improve the UI/UX of the websites.</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="exp-list py-6">
-                            <div class="exp-heading mb-4">
-                                <div class="flex justify-between items-center">
-                                    <h4 class="h5">Member, Web Development Division</h4>
-                                    <p>March 2021 – Present</p>
+                                <div>
+                                    <h3 class="h4 text-lg sm:text-xl md:text-2xl">HIMTI BINUS University</h3>
+                                    <p>Jakarta, Indonesia</p>
                                 </div>
-                                <p>Jakarta, Indonesia</p>
                             </div>
-                            <div class="exp-content">
-                                <ul class="list-disc ml-4">
-                                    <li>Tech stack: HTML, CSS, JavaScript, Bootstrap 4, Tailwind CSS</li>
-                                    <li>Develop the official websites for two HIMTI events, i.e., HISHOT (HIMTI Seminar, Workshop, and Study Tour) 2021 and TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) 2021.</li>
-                                    <li>Develop the About Us page of HIMTI's renewed official website.</li>
-                                    <li>Maintain and improve the UI/UX of the websites.</li>
-                                </ul>
+
+                            <div class="exp-timeline">
+                                <div class="exp-heading mb-4">
+                                    <div class="exp-title">
+                                        <h4 class="h5 text-base md:text-lg">Member, Web Development Division</h4>
+                                        <p>March 2021 – Present</p>
+                                    </div>
+                                </div>
+                                <div class="exp-desc">
+                                    <ul>
+                                        <li>Tech stack: HTML, CSS, JavaScript, Bootstrap 4, Tailwind CSS</li>
+                                        <li>Develop the official websites for two HIMTI events, i.e., HISHOT (HIMTI Seminar, Workshop, and Study Tour) 2021 and TECHNO (Togetherness, Entertainment, and Chasing New Opportunity) 2021.</li>
+                                        <li>Develop the About Us page of HIMTI's renewed official website.</li>
+                                        <li>Maintain and improve the UI/UX of the websites.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-timeline">
+                                <div class="exp-heading mb-4">
+                                    <div class="exp-title">
+                                        <h4 class="h5 text-base md:text-lg">Committee, HIMTI KIT Division of TECHNO 2021</h4>
+                                        <p>May 2021 – Present</p>
+                                    </div>
+                                </div>
+                                <div class="exp-desc">
+                                    <p>TECHNO is a HIMTI freshmen-welcoming event for School of Computer Science students.</p>
+                                    <ul class="mt-4">
+                                        <li>Serve as the representative of the Alam Sutera region, whose duty is to support the coordinator and act for the coordinator when required.</li>
+                                        <li>Participate in the packaging of the HIMTI KIT, a freshmen starter kit serving as a benefit for the event attendees, by outlining the Algorithm and Programming course.</li>
+                                        <li>Facilitate things required for the event, i.e., developing the official website of TECHNO 2021.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="exp-timeline">
+                                <div class="exp-heading mb-4">
+                                    <div class="exp-title">
+                                        <h4 class="h5 text-base md:text-lg">Event Coordinator, Pengabdian Kepada Masyarakat 2021</h4>
+                                        <p>May 2021 – June 2021</p>
+                                    </div>
+                                </div>
+                                <div class="exp-desc">
+                                    <p>This year's Pengabdian Kepada Masyarakat event consisted of a five-session technology-related workshop dedicated to the students of SMP Efata Serpong.</p>
+                                    <ul class="mt-4">
+                                        <li>Coordinated with my teammates to plan and execute the event.</li>
+                                        <li>Oversaw the smooth running of the event and acted to solve existing problems.</li>
+                                        <li>Served as a master of ceremony (MC) in two sessions.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -218,11 +249,35 @@
         </div>
     </section>
 
-    <section id="Education" class="section-dark">
+    <div class="h-15 bg-gray-300">
+        <svg class="bg-gray-300 animate-bounce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 60" fill="none">
+            <path d="M833.079 28.5668C416.978 90.2915 0 28.5668 0 28.5668V0H1440V28.5668V55.8583C1440 55.8583 1249.18 -33.1579 833.079 28.5668Z" fill="#1F2937"/>
+            </svg>
+    </div>
+    
+    <section id="Education" class="section-light">
         <div class="container">
             <div class="container-h2">
                 <h2>Education.</h2>
                 <hr>
+            </div>
+            <div class="container-education hover-translate-2">
+                <div class="list-education bg-gray-400 p-4 2xs:p-6 sm:p-8 lg:p-10 rounded-xl xs:rounded-3xl flex items-center">
+                    <div class="w-1/4 xs:w-1/6 md:w-1/8">
+                        <a href="https://binus.ac.id/">
+                            <div class="bg-white rounded-lg sm:rounded-2xl hover:opacity-80 duration-500">
+                                <img class="p-1/10" src="assets/BINUS.png" alt="BINUS University">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="ml-6 lg:ml-8 w-3/4 xs:w-5/6 md:w-7/8">
+                        <div class="md:flex md:justify-between md:items-center">
+                            <h3 class="h4 text-lg sm:text-xl md:text-2xl">Undergraduate, Computer Science</h3>
+                            <p>2020 – 2024</p>
+                        </div>
+                        <p class="h5 text-base md:text-lg font-normal">BINUS University</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -233,19 +288,82 @@
                 <h2>Skills.</h2>
                 <hr>
             </div>
+            <div class="container-skills">
+                <div>
+                    <h3 class="h4">Tools and Technologies</h3>
+                    <ul class="list-skills">
+                        <li>C</li>
+                        <li>Java</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                        <li>Tailwind CSS</li>
+                        <li>Microsoft Word</li>
+                        <li>Microsoft Excel</li>
+                        <li>Microsoft PowerPoint</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="h4">Knowledge</h3>
+                    <ul class="list-skills">
+                        <li>Algorithm and Programming</li>
+                        <li>Data Structures</li>
+                        <li>UI/UX</li>
+                        <li>Graphic Design</li>
+                        <li>Video Editing</li>
+                        <li>UML</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="h4">Interpersonal</h3>
+                    <ul class="list-skills">
+                        <li>Communication</li>
+                        <li>Teamwork</li>
+                        <li>Problem Solving</li>
+                        <li>Public Speaking</li>
+                        <li>Leadership</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="h4">Language</h3>
+                    <ul class="list-skills">
+                        <li>Native Indonesian</li>
+                        <li>Fluent Hokkien</li>
+                        <li>Advanced English</li>
+                        <li>Basic Mandarin</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="Projects" class="section-light">
+    <!-- <section id="Projects" class="section-light">
         <div class="container">
             <div class="container-h2">
                 <h2>Projects.</h2>
                 <hr>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <footer id="Contact" class="section-dark">
+        <div class="container py-12">
+            <div class="sm:flex sm:justify-between sm:items-center">
+                <div>
+                    <h2 class="font-medium tracking-widest">LOUISITE.</h2>
+                    <p class="text-base md:text-lg mt-1">Louis Gustavo's own personal website.</span></p>
+                </div>
+                <div class="container-social mt-4 ml-1 sm:m-0">
+                    <a href="mailto:louisgustavo07@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.instagram.com/itslouisgs/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/louis-gustavo/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.github.com/itslouisgs/" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <p class="mt-8 sm:mt-4">© 2021. All rights reserved.</span></p>
+        </div>
     </footer>
         
     <script src="script.js"></script>
