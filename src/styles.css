@@ -115,16 +115,20 @@
         @apply block md2:flex md2:justify-between md2:items-center;
     }
 
-    .container-exp .list-exp ul{
-        @apply list-disc ml-4 text-justify;
-    }
-
     .container-exp .exp-content > .exp-timeline{
         @apply py-6;
     }
 
     .container-exp .exp-content > .exp-timeline:last-child{
         @apply pb-0;
+    }
+
+    .container-exp .list-exp .exp-desc{
+        @apply text-justify;
+    }
+
+    .container-exp .list-exp .exp-desc ul{
+        @apply list-disc ml-4;
     }
 
     .container-edu .list-edu{
