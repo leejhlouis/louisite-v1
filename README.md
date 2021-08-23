@@ -1,3 +1,3 @@
 # itslouisgs.github.io
 
-My own personal website
+My own personal website built with TailwindCSS.
