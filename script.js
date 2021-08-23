@@ -1,24 +1,13 @@
-// Mobile navbar
-const nav = document.getElementById('Navbar'),
-    btn = document.getElementById("btn-mobile"),
+// Mobile navbar toggle
+var btn = document.getElementById("btn-mobile"),
+    hamburger = document.getElementById("hamburger"),
     menu = document.getElementById("mobile-menu"),
-    content = document.getElementById("mobile-menu-content"),
-    expand = document.getElementById("icon-expand"),
-    collapse = document.getElementById("icon-collapse")
+    content = document.getElementById("mobile-menu-content")
 
-const hamburger = document.getElementById("hamburger")
-
-// add event listeners
 btn.addEventListener("click", () => {
-    // if contains transparent class then
-    // if (nav.classList.contains("nav-transparent")){
-    //     nav.classList.toggle("nav-colored-2")
-    // }
     hamburger.classList.toggle('expand')
     menu.classList.toggle("opacity-100");
     content.classList.toggle("hidden");
-    // expand.classList.toggle("hidden");
-    // collapse.classList.toggle("hidden");
 });
 
 // Typing effect
@@ -68,21 +57,3 @@ window.onload = function typing(){
     	document.getElementById('vertical-bar').classList.add('animate-blink')
     }
 }
-
-// setInterval(function(){
-//     console.log("Refreshing window.innerWidth: " + window.innerWidth)
-//     var from = document.getElementsByClassName("exp-desc")
-//     var to = document.getElementsByClassName("exp-desc-wrapper")
-//     var tom = document.getElementsByClassName("exp-desc-mobile-wrapper")
-
-//     if (window.innerWidth < 640){
-//         for (let i = 0; i < from.length; i++){ 
-//             tom[i].appendChild(from[i])
-//         }
-//     }
-//     else{
-//         for (let i = 0; i < tom.length; i++){ 
-//             to[i].appendChild(from[i])
-//         }
-//     }
-// }, 100)
