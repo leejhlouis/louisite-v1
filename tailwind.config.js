@@ -19,6 +19,7 @@ module.exports = {
         sans: ['Nunito Sans', 'sans-serif']
       },
       colors: {
+        'gray-750': 'rgb(43, 53, 68)',
         'gray-1000': 'rgb(6, 16, 29)',
       },
       spacing: {

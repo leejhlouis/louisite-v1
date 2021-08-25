@@ -171,6 +171,10 @@
         @apply text-lg;
     }
 
+    .btn-back-to-top{
+        @apply fixed bottom-6 right-6 duration-500 bg-gray-750 hover-translate hover:bg-gray-900 rounded-xl shadow-2xl;
+    }
+
     .section-light{
         @apply bg-gray-300 text-black w-full;
     }
