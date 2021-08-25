@@ -96,7 +96,7 @@
 
     .container-exp .exp-img > a > div,
     .container-edu .edu-img > a > div{
-        @apply bg-white rounded-lg sm:rounded-2xl hover:opacity-80 duration-500;
+        @apply bg-white rounded-lg sm:rounded-2xl hover:opacity-90 duration-500;
     }
 
     .container-exp .exp-img > a > div > img{
@@ -164,7 +164,11 @@
     }
 
     .btn-primary{
-        @apply bg-gray-800 border-gray-800 text-white transform transition duration-500 hover:scale-110 hover:bg-gray-1000 hover:border-gray-1000;
+        @apply bg-gray-800 border-gray-800 text-white transition duration-500 hover-translate hover:bg-gray-1000 hover:border-gray-1000;
+    }
+
+    .btn > a {
+        @apply text-lg;
     }
 
     .section-light{
@@ -244,12 +248,12 @@
         @apply px-5 pb-3;
     }
 
-    .list-skills{
+    .tags{
         @apply mt-2;
     }
 
-    .list-skills > li{
-        @apply hover-translate inline-block px-6 py-1 bg-gray-600 text-white mr-1 md:mr-2 my-2 rounded-3xl duration-500 cursor-pointer;
+    .tags > li{
+        @apply inline-block px-6 py-1 bg-gray-600 text-white mr-1 md:mr-2 my-2 rounded-3xl duration-500 cursor-pointer hover-translate;
     }
 
     #Home{
@@ -287,19 +291,35 @@ section{
     scroll-margin-top: 72px;
 }
 
+/* animate-blink animation */
+
 @keyframes blink {
     50% {
-      opacity: 0.0;
+      opacity: 0;
     }
 }
 
 @-webkit-keyframes blink {
     50% {
-    opacity: 0.0;
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes blink {
+    50% {
+        opacity: 0;
     }
 }
 
 .animate-blink {
     animation: blink 2s step-start 0s infinite;
     -webkit-animation: blink 2s step-start 0s infinite;
+    -moz-animation: blink 2s step-start 0s infinite;
+    -o-animation: blink 2s step-start 0s infinite;
 }
