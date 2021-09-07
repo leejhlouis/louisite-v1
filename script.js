@@ -47,9 +47,9 @@ window.onload = function typing(){
         }
 
         if (flag2){
-	    setTimeout(typing, 1000)
-	    flag2--
-	}
+            setTimeout(typing, 1000)
+            flag2--
+        }
         else
             setTimeout(typing, speed)
     }
